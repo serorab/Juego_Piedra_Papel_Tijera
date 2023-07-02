@@ -83,7 +83,7 @@ def salirBye():
 
 def salir():
     messagebox.showinfo("Resultado Final", f"La puntuación final es de:\nTú: {jugador}\nComputadora: {compu}\nEmpates: {empates}")
-    exit()
+    salirBye()
 
 boton1 = tk.Button(ventanaPrincipal, text="SÍ", width=10, height=2, bg="green", fg="white",command=inicio)
 boton2 = tk.Button(ventanaPrincipal, text="NO", width=10, height=2, bg="red", fg="white", command=salirBye)
