@@ -28,13 +28,14 @@ def inicio():
     ventanaJuego = tk.Toplevel(ventanaPrincipal)
     ventanaJuego.geometry("350x150+500+200")
     ventanaJuego.title('¿Piedra, papel o tijera?')
+    ventanaJuego.configure(bg="#288BA8")
     ventanaJuego.deiconify()
 
 
-    botonPiedra = tk.Button(ventanaJuego, text='Piedra', width=5, height=2, command=lambda: jugar('Piedra'))
-    botonPapel = tk.Button(ventanaJuego, text='Papel', width=5, height=2, command=lambda: jugar('Papel'))
-    botonTijera = tk.Button(ventanaJuego, text='Tijera', width=5, height=2, command=lambda: jugar('Tijera'))
-    botonSalir = tk.Button(ventanaJuego, text='Salir', width=5, height=2, command=salir)
+    botonPiedra = tk.Button(ventanaJuego, text='Piedra', width=10, height=2, bg="yellow", fg="black", command=lambda: jugar('Piedra'))
+    botonPapel = tk.Button(ventanaJuego, text='Papel', width=10, height=2, bg="white", fg="black",command=lambda: jugar('Papel'))
+    botonTijera = tk.Button(ventanaJuego, text='Tijera', width=10, height=2, bg="blue", fg="white",command=lambda: jugar('Tijera'))
+    botonSalir = tk.Button(ventanaJuego, text='Salir', width=5, height=2, bg="red", fg="white", command=salir)
     botonPiedra.pack(side="left", padx=10)
     botonPapel.pack(side="left", padx=10)
     botonTijera.pack(side="left", padx=10)
@@ -84,8 +85,8 @@ def salir():
     messagebox.showinfo("Resultado Final", f"La puntuación final es de:\nTú: {jugador}\nComputadora: {compu}\nEmpates: {empates}")
     exit()
 
-boton1 = tk.Button(ventanaPrincipal, text="SÍ", width=10, height=2, command=inicio)
-boton2 = tk.Button(ventanaPrincipal, text="NO", width=10, height=2, command=salirBye)
+boton1 = tk.Button(ventanaPrincipal, text="SÍ", width=10, height=2, bg="green", fg="white",command=inicio)
+boton2 = tk.Button(ventanaPrincipal, text="NO", width=10, height=2, bg="red", fg="white", command=salirBye)
 boton1.pack(side="left", padx=60)
 boton2.pack(side="left")
 
