@@ -5,7 +5,7 @@ from tkinter import messagebox #Crea una ventana para mostrar resultado
 
 #Creación de la ventana principal
 ventanaPrincipal =tk.Tk()
-ventanaPrincipal.title('Sergame')
+ventanaPrincipal.title('Principal')
 ventanaPrincipal.geometry("350x150+500+200")
 
 texto = "¡Bienvenid@ a este divertido juego!\n¿Te animas a jugar?"
@@ -16,8 +16,10 @@ fuente = font.Font(size=fuenteTama)
 etiqueta = tk.Label(ventanaPrincipal, text=texto, font=fuente)
 etiqueta.pack()
 
+#Variables globales para contabilizar los resultados.
 jugador = 0
 compu = 0
+empates = 0
 
 #Creación de funciones
 def inicio():
@@ -48,6 +50,8 @@ def jugar(opcion):
 
     if usuario == computadora:
         resultado = '¡Empate!'
+        global empates
+        empates += 1
 
     elif ganó_el_jugador (usuario, computadora):
         resultado = '¡Ganaste!'
@@ -58,7 +62,7 @@ def jugar(opcion):
         resultado = '¡Perdiste!'
         global compu
         compu += 1
-    
+        
     #Ventana emergente que muestra el resultado.    
     messagebox.showinfo("Resultado",f"Tu opción fue {opcion}\nLa computadora eligió {computadora}\n{resultado}")
 
@@ -73,7 +77,7 @@ def ganó_el_jugador (jugador, oponente):
         return False
 
 def salir():
-    messagebox.showinfo("Resultado Final", f"La puntuación final es de:\nTú: {jugador}\nComputadora: {compu}")
+    messagebox.showinfo("Resultado Final", f"La puntuación final es de:\nTú: {jugador}\nComputadora: {compu}\nEmpates: {empates}")
     exit()
 
 boton1 = tk.Button(ventanaPrincipal, text="SÍ", width=10, height=2, command=inicio)
