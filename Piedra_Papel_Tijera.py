@@ -76,12 +76,16 @@ def ganó_el_jugador (jugador, oponente):
     else:
         return False
 
+def salirBye():
+    messagebox.showinfo("Despedida", "¡Hasta la próxima!")
+    exit()
+
 def salir():
     messagebox.showinfo("Resultado Final", f"La puntuación final es de:\nTú: {jugador}\nComputadora: {compu}\nEmpates: {empates}")
     exit()
 
 boton1 = tk.Button(ventanaPrincipal, text="SÍ", width=10, height=2, command=inicio)
-boton2 = tk.Button(ventanaPrincipal, text="NO", width=10, height=2, command=salir)
+boton2 = tk.Button(ventanaPrincipal, text="NO", width=10, height=2, command=salirBye)
 boton1.pack(side="left", padx=60)
 boton2.pack(side="left")
 
