@@ -5,7 +5,7 @@ from tkinter import messagebox #Crea una ventana para mostrar resultado
 
 #Creación de la ventana principal
 ventanaPrincipal =tk.Tk()
-ventanaPrincipal.title('Principal')
+ventanaPrincipal.title('Ventana Principal')
 ventanaPrincipal.geometry("350x150+500+200")
 
 texto = "¡Bienvenid@ a este divertido juego!\n¿Te animas a jugar?"
@@ -62,7 +62,7 @@ def jugar(opcion):
         resultado = '¡Perdiste!'
         global compu
         compu += 1
-        
+    
     #Ventana emergente que muestra el resultado.    
     messagebox.showinfo("Resultado",f"Tu opción fue {opcion}\nLa computadora eligió {computadora}\n{resultado}")
 
